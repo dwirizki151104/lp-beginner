@@ -80,13 +80,6 @@ export const HeroSection = () => {
                   DAFTAR SEKARANG
                 </a>
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-base sm:text-lg px-8 py-4 h-auto bg-white/40 border-teal-400 text-green-700 hover:bg-teal-50 font-bold shadow"
-              >
-                Lihat Detail
-              </Button>
             </div>
           </div>
 
