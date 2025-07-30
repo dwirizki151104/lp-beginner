@@ -74,12 +74,6 @@ export const Navbar = () => {
           >
             Gallery
           </button>
-          <button 
-            onClick={() => scrollToSection("cta-section")}
-            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition-colors"
-          >
-            Contact Us
-          </button>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -127,12 +121,6 @@ export const Navbar = () => {
               className={navLinkClass({ isActive: false })}
             >
               Gallery
-            </button>
-            <button 
-              onClick={() => scrollToSection("cta-section")}
-              className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition-colors text-center my-2"
-            >
-              Contact Us
             </button>
           </div>
         </div>
