@@ -50,39 +50,42 @@ export const Galery = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
               Galeri Kegiatan
             </h2>
+            <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-2"></div>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
               Dokumentasi momen berharga dari setiap kegiatan kami
             </p>
           </div>
         </Fade>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryItems.map((item) => (
             <Fade key={item.id} direction="up" triggerOnce delay={item.id * 100}>
-              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div className="aspect-w-4 aspect-h-3">
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white">
+                <div className="aspect-w-4 aspect-h-3 w-full">
                   <img
-                    src={`/images/img${item.id}.jpg`}
+                    src={`/images/img${item.id}.webp`}
                     alt={item.title}
-                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105 rounded-2xl"
                     loading="lazy"
                   />
                 </div>
-                
+                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 w-full">
                     <span className="inline-block px-3 py-1 text-xs font-medium bg-primary text-white rounded-full mb-2">
                       {item.category}
                     </span>
                     <h3 className="text-xl font-semibold text-white mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-300">{item.description}</p>
-                    <button className="mt-3 inline-flex items-center text-sm font-medium text-white hover:text-accent transition-colors">
+                    <p className="text-sm text-gray-200">{item.description}</p>
+                    <button 
+                      className="mt-3 inline-flex items-center text-white hover:text-primary px-0"
+                    >
                       Lihat Detail <ArrowRight className="ml-1 h-4 w-4" />
                     </button>
                   </div>
                 </div>
-                
-                <div className="absolute top-4 right-4 p-2 bg-white/90 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {/* Zoom Icon */}
+                <div className="absolute top-4 right-4 p-2 bg-white/90 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow">
                   <ZoomIn className="h-5 w-5 text-gray-800" />
                 </div>
               </div>
